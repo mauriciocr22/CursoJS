@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        *{
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            font: normal 18px Arial;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            background-color: #fff;
+            width: 40%;
+            height: 18%;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.11);
+            text-align: center;
+            padding: 20px 10px;
+        }
+        #res{
+            margin-top: 20px;
+        }
+        #país{
+            border: 1px solid rgba(0, 0, 0, 0.623);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Nacionalidade</h1>
+        País de Origem: 
+        <select name="país" id="país">
+            <option> -- Selecione -- </option>
+            <option value="Brasil"> Brasil </option>
+            <option value="EUA"> EUA </option>
+            <option value="Austrália"> Austrália </option>
+            <option value="Cuba"> Cuba </option>
+            <option value="Canadá"> Canadá </option>
+            <input type="button" value="Verificar" onclick="checar()">
+        </select>
+        <div id="res">
+    
+        </div>
+    </div>
+    <script>
+        function checar(){
+            var txtvl = window.document.querySelector('select#país')
+            var res = window.document.querySelector('div#res')
+            var país = String(txtvl.value)
+            res.innerHTML = `<p>Você vive em ${país}!</p>`
+
+            switch (país) {
+                case "Brasil":
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+                    break;
+                case "EUA":
+                res.innerHTML += `<p>Você é Americano!</p>`
+                    break;
+                case "Austrália":
+                res.innerHTML += `<p>Você é Australiano!</p>`
+                    break;
+                case "Cuba":
+                res.innerHTML += `<p>Você é Cubano!</p>`
+                    break;
+                case "Canadá":
+                res.innerHTML += `<p>Você é Canadense!</p>`
+                break;
+                
+                default:
+                    res.innerHTML = `<p>Insira um país</p>`
+                    break;
+            }
+
+            /* if(país == 'Brasil') {
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+            }
+            if(país == 'EUA'){
+                res.innerHTML += `<p>Você é Americano!</p>`
+            } 
+            if(país == 'Austrália'){
+                res.innerHTML += `<p>Você é Australiano!</p>`
+            } 
+            if(país == 'Cuba'){
+                res.innerHTML += `<p>Você é Cubano!</p>`
+            } 
+            if(país == 'Canadá'){
+                res.innerHTML += `<p>Você é Canadense!</p>`
+            }  */
+            
+            /* else {
+                res.innerHTML += `<p>Você é Estrangeiro! </p>`
+            } */
+
+        }
+    </script>  
+</body>
+</html>
