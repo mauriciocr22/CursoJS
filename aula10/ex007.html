@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            font: normal 18px Arial;
+            background-color: #f2f2f2;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            font: normal 18px Arial;
+            width: 100px;
+        }
+        div#res {
+            margin-top: 20px;
+        }
+        .container{
+            background-color: #fff;
+            padding: 20px;
+            width: 50%;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(109, 106, 106, 0.13);
+            
+        }
+        h1{
+            margin-bottom: 15px;
+        }
+        .inputText{
+            border: 1px solid rgba(0, 0, 0, 0.623);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Somando Valores</h1>
+            <!-- <select name="operacao" id="operacao">
+                <option value="teste">--- Operação ---</option>
+                <option value="teste">Soma</option>
+                <option value="teste">Subtração</option>
+                <option value="teste">Multiplicação</option>
+                <option value="teste">Divisão</option>
+            </select> -->
+            <div>
+                <input class="inputText" type="number" name="txtn1" id="txtn1"> +
+                <input class="inputText" type="number" name="txtn2" id="txtn2">
+                <input type="button" value="Somar" onclick="somar()">
+            </div>
+        <div id="res"></div>
+    </div>
+    <script>
+        function somar(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é ${s}.`
+        }
+    </script>
+</body>
+</html>
